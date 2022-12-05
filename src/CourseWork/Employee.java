@@ -1,7 +1,7 @@
 package CourseWork;
 
 public class Employee {
-    //инфонмация о ФИО сотрудника, отделе работы (1-5), зп сотрудника
+
     private String employeeName;
     private int department;
     private int salary;
