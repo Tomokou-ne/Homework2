@@ -46,24 +46,24 @@ public class Main {
         for (int i = 1; i < employees.length; i++) {
             if (employees[i].getSalary() < minSalary) {
                 minSalary = employees[i].getSalary();
+                minSalaryEmployee = employees[i].getEmployeeName();
             }
-            minSalaryEmployee = employees[i].getEmployeeName();
         }
         return minSalaryEmployee + ", она составляет " + minSalary;
     }
     public static String getMax() {
-        int maxSalary = employees[9].getSalary();
+        int maxSalary = employees.length - 1;
         String maxSalaryEmployee = null;
         for (int i = 1; i < employees.length; i++) {
             if (employees[i].getSalary() > maxSalary) {
                 maxSalary = employees[i].getSalary();
+                maxSalaryEmployee = employees[i].getEmployeeName();
             }
-            maxSalaryEmployee = employees[i].getEmployeeName();
         }
         return maxSalaryEmployee + ", она составляет " + maxSalary;
     }
     public static int averageSalary() {
-        return getAndCalculateSalarySum() / 10;
+        return getAndCalculateSalarySum() / employees.length;
     }
     public static void fullEmployeeList() {
         for (Employee employee : employees) {
