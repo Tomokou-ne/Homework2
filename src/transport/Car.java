@@ -3,13 +3,8 @@ import java.time.LocalDate;
 import java.util.Calendar;
 
 
-public class Car {
-    private String brand;
-    private String model;
+public class Car extends Transport{
     double engineVolume;
-    String color;
-    private int productionYear;
-    private String productionCountry;
     String transmission;
     private String carcase;
     String registrationNumber;
@@ -136,37 +131,12 @@ public class Car {
             this.insurance = insurance;}
     }
 
-    public Car(String brand, String model, int productionYear, String productionCountry, String color, double engineVolume,
-               String transmission, String carcase, String registrationNumber, int numberOfSeats, String typeOfTires) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+    public Car(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed, double engineVolume, String transmission, String carcase, String registrationNumber, int numberOfSeats, String typeOfTires) {
+        super(brand, model, productionYear, productionCountry, color, maxSpeed);
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
-        }
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (productionCountry == null || productionCountry.isEmpty() || productionCountry.isBlank()) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
         }
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "default";
@@ -197,8 +167,7 @@ public class Car {
     }
 
     public void carWright() {
-        System.out.println(brand + " " + model + ", " + productionYear + " года выпуска, страна сборщик " + productionCountry +
-                ", цвет кузова " + color + ", объем двигателя " + engineVolume + ", коробка передач " + transmission + ", тип кузова " +
+        System.out.println( "Объем двигателя " + engineVolume + ", коробка передач " + transmission + ", тип кузова " +
                 carcase + ", регистрационный номер " + registrationNumber + ", количество мест " + numberOfSeats + ", резина " +
                 typeOfTires);
     }
@@ -220,21 +189,6 @@ public class Car {
         }
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
 
     public String getCarcase() {
         return carcase;
@@ -253,18 +207,6 @@ public class Car {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
-        }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
         }
     }
 

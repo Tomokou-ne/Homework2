@@ -1,3 +1,4 @@
+import transport.Bus;
 import transport.Car;
 
 
@@ -6,10 +7,11 @@ public class Main {
         Car.Key distant = new Car.Key("доступен", "доступен");
         Car.Key local = new Car.Key("отсутствует", "отсутствует");
 
-        Car lada = new Car("Lada", "Grande", 2015, "Россия", "жёлтый", 1.7,
+        Car lada = new Car("Lada", "Grande", 2015, "Россия", "жёлтый", 120, 1.7,
                 " ", "седан", "h584ko965", 0, " ");
         lada.setTransmission("механическая");
         lada.changeTires();
+        lada.transportWright();
         lada.carWright();
         lada.setKey(local);
         local.keyWright();
@@ -19,10 +21,11 @@ public class Main {
         ladaGrande.checkDuration(2021);
         ladaGrande.checkNumber();
 
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "чёрный", 3.0,
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "чёрный", 250, 3.0,
                 "автоматическая", "хетчбек", "h687lj9k7", 0, " ");
         audi.changeTires();
         audi.checkRegistrationNumber();
+        audi.transportWright();
         audi.carWright();
         audi.setKey(distant);
         distant.keyWright();
@@ -31,10 +34,11 @@ public class Main {
         audi.setInsurance(audiA8);
         audiA8.checkDuration(2015);
 
-        Car bmv = new Car("BMV", "Z8", 2021, "Германия", "", 3.0,
+        Car bmv = new Car("BMV", "Z8", 2021, "Германия", "", 300, 3.0,
                 " ", "купе", "f804od695", 2, " ");
         bmv.setTransmission("автоматическая");
         bmv.changeTires();
+        bmv.transportWright();
         bmv.carWright();
         System.out.println(bmv.getProductionYear());
         bmv.setKey(distant);
@@ -45,9 +49,10 @@ public class Main {
         bmvZ8.checkNumber();
 
 
-        Car kia = new Car("KIA", "Sportage 4 поколение", 2018, "Южная Корея", "красный", 2.4,
+        Car kia = new Car("KIA", "Sportage 4 поколение", 2018, "Южная Корея", "красный", 200, 2.4,
                 "механическая", "кроссовер", "p008pl965", 6, " ");
         kia.changeTires();
+        kia.transportWright();
         kia.carWright();
         System.out.println(kia.getProductionCountry());
         kia.setKey(local);
@@ -56,9 +61,10 @@ public class Main {
         kia.setInsurance(kiaSportage4);
         kiaSportage4.checkDuration(2019);
 
-        Car hyundai = new Car("Hyundai", "", 2016, "Южная Корея", "оранжевый", 1.6,
+        Car hyundai = new Car("Hyundai", "", 2016, "Южная Корея", "оранжевый", 240, 1.6,
                 "автоматическая", "микро", "l008re048", 1, " ");
         hyundai.changeTires();
+        hyundai.transportWright();
         hyundai.carWright();
         System.out.println(hyundai.getCarcase());
         hyundai.setKey(local);
@@ -67,6 +73,15 @@ public class Main {
         hyundai.setInsurance(hyundaiDefault);
         hyundaiDefault.checkDuration(2018);
         hyundaiDefault.checkNumber();
+
+        Bus uno = new Bus("MAN", "Lion's City", 2018, "Германия", "белый", 180);
+        uno.transportWright();
+
+        Bus duo = new Bus("VolgaBus", "5270GH", 2018, "Россия", "жёлтый", 190);
+        duo.transportWright();
+
+        Bus tres = new Bus("ЛИАЗ", "6231", 2004, "Россия", "зелёный", 240);
+        tres.transportWright();
 
     }
 }
