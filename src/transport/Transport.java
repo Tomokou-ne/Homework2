@@ -1,10 +1,10 @@
 package transport;
 
 public class Transport {
-    String brand;
-    String model;
-    int productionYear;
-    String productionCountry;
+    private String brand;
+    private String model;
+    private int productionYear;
+    private String productionCountry;
     String color;
     int maxSpeed;
 

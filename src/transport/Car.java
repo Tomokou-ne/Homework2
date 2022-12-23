@@ -167,7 +167,7 @@ public class Car extends Transport{
     }
 
     public void carWright() {
-        System.out.println( "Объем двигателя " + engineVolume + ", коробка передач " + transmission + ", тип кузова " +
+        System.out.println("Объем двигателя " + engineVolume + ", коробка передач " + transmission + ", тип кузова " +
                 carcase + ", регистрационный номер " + registrationNumber + ", количество мест " + numberOfSeats + ", резина " +
                 typeOfTires);
     }
