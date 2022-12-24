@@ -39,13 +39,6 @@ public class Transport <T extends Driver & Competing> {
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
-        if (engineVolume <= 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-    }
     public void startMotion() {
         System.out.println("Начать движение!");
 
