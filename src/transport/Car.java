@@ -166,10 +166,12 @@ public class Car extends Transport{
 
     }
 
-    public void carWright() {
-        System.out.println("Объем двигателя " + engineVolume + ", коробка передач " + transmission + ", тип кузова " +
-                carcase + ", регистрационный номер " + registrationNumber + ", количество мест " + numberOfSeats + ", резина " +
-                typeOfTires);
+    @Override
+    public String toString() {
+        return brand + model + productionYear + " года выпуска, страна сборщик " + productionCountry +
+                ", цвет кузова " + color + ", максимальная скорость " + maxSpeed + " км/час, объем двигателя " + engineVolume +
+                ", коробка передач " + transmission + ", тип кузова " + carcase + ", регистрационный номер " + registrationNumber
+                + ", количество мест " + numberOfSeats + ", резина " + typeOfTires;
     }
     public void changeTires() {
         if (Calendar.MONTH > 2 && Calendar.MONTH < 10) {

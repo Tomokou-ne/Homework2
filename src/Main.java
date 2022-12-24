@@ -11,8 +11,8 @@ public class Main {
                 " ", "седан", "h584ko965", 0, " ");
         lada.setTransmission("механическая");
         lada.changeTires();
-        lada.transportWright();
-        lada.carWright();
+        System.out.println(lada);
+
         lada.setKey(local);
         local.keyWright();
         System.out.println(lada.getBrand());
@@ -25,8 +25,8 @@ public class Main {
                 "автоматическая", "хетчбек", "h687lj9k7", 0, " ");
         audi.changeTires();
         audi.checkRegistrationNumber();
-        audi.transportWright();
-        audi.carWright();
+        System.out.println(audi);
+
         audi.setKey(distant);
         distant.keyWright();
         System.out.println(audi.getModel());
@@ -38,8 +38,8 @@ public class Main {
                 " ", "купе", "f804od695", 2, " ");
         bmv.setTransmission("автоматическая");
         bmv.changeTires();
-        bmv.transportWright();
-        bmv.carWright();
+        System.out.println(bmv);
+
         System.out.println(bmv.getProductionYear());
         bmv.setKey(distant);
         distant.keyWright();
@@ -52,8 +52,8 @@ public class Main {
         Car kia = new Car("KIA", "Sportage 4 поколение", 2018, "Южная Корея", "красный", 200, 2.4,
                 "механическая", "кроссовер", "p008pl965", 6, " ");
         kia.changeTires();
-        kia.transportWright();
-        kia.carWright();
+        System.out.println(kia);
+
         System.out.println(kia.getProductionCountry());
         kia.setKey(local);
         local.keyWright();
@@ -64,8 +64,8 @@ public class Main {
         Car hyundai = new Car("Hyundai", "", 2016, "Южная Корея", "оранжевый", 240, 1.6,
                 "автоматическая", "микро", "l008re048", 1, " ");
         hyundai.changeTires();
-        hyundai.transportWright();
-        hyundai.carWright();
+        System.out.println(hyundai);
+
         System.out.println(hyundai.getCarcase());
         hyundai.setKey(local);
         local.keyWright();
@@ -75,13 +75,13 @@ public class Main {
         hyundaiDefault.checkNumber();
 
         Bus uno = new Bus("MAN", "Lion's City", 2018, "Германия", "белый", 180);
-        uno.transportWright();
+        System.out.println(uno);
 
         Bus duo = new Bus("VolgaBus", "5270GH", 2018, "Россия", "жёлтый", 190);
-        duo.transportWright();
+        System.out.println(duo);
 
         Bus tres = new Bus("ЛИАЗ", "6231", 2004, "Россия", "зелёный", 240);
-        tres.transportWright();
+        System.out.println(tres);
 
     }
 }

@@ -1,12 +1,12 @@
 package transport;
 
 public class Transport {
-    private String brand;
-    private String model;
-    private int productionYear;
-    private String productionCountry;
-    String color;
-    int maxSpeed;
+    protected String brand;
+    protected String model;
+    protected final int productionYear;
+    protected final String productionCountry;
+    protected String color;
+    protected static int maxSpeed;
 
     public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
@@ -42,10 +42,10 @@ public class Transport {
 
     }
 
-    public void transportWright() {
+   /* public void transportWright() {
         System.out.println(brand + " " + model + ", " + productionYear + " года выпуска, страна сборщик " + productionCountry + ", цвет кузова "
                 + color + ", максимальная скорость " + maxSpeed);
-    }
+    }*/
     public String getBrand() {
         return brand;
     }
