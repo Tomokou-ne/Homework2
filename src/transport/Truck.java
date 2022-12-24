@@ -1,17 +1,13 @@
 package transport;
-import java.time.LocalDate;
-import java.util.Calendar;
 
-
-public class Car extends Transport implements Competing{
-
-    public Car(String brand, String model, double engineVolume) {
+public class Truck extends Transport implements Competing{
+    public Truck(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
 
     @Override
     public void pitStop(int circle) {
-        if (circle % 8 == 0) {
+        if (circle % 5 == 0) {
             System.out.println("Необходим пит-стоп!");
         }
     }

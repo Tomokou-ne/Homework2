@@ -1,87 +1,74 @@
+import driver.DriverB;
+import driver.DriverC;
+import driver.DriverD;
 import transport.Bus;
 import transport.Car;
+import transport.Truck;
 
 
 public class Main {
     public static void main(String[] args)  {
-        Car.Key distant = new Car.Key("доступен", "доступен");
-        Car.Key local = new Car.Key("отсутствует", "отсутствует");
 
-        Car lada = new Car("Lada", "Grande", 2015, "Россия", "жёлтый", 120, 1.7,
-                " ", "седан", "h584ko965", 0, " ");
-        lada.setTransmission("механическая");
-        lada.changeTires();
+        Car lada = new Car("Lada", "Grande", 1.7);
         lada.transportWright();
-        lada.carWright();
-        lada.setKey(local);
-        local.keyWright();
-        System.out.println(lada.getBrand());
-        Car.Insurance ladaGrande = new Car.Insurance(5, 15650, 458695);
-        lada.setInsurance(ladaGrande);
-        ladaGrande.checkDuration(2021);
-        ladaGrande.checkNumber();
+        lada.pitStop(9);
 
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "чёрный", 250, 3.0,
-                "автоматическая", "хетчбек", "h687lj9k7", 0, " ");
-        audi.changeTires();
-        audi.checkRegistrationNumber();
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0);
         audi.transportWright();
-        audi.carWright();
-        audi.setKey(distant);
-        distant.keyWright();
-        System.out.println(audi.getModel());
-        Car.Insurance audiA8 = new Car.Insurance(3, 12000, 985466254);
-        audi.setInsurance(audiA8);
-        audiA8.checkDuration(2015);
+        audi.bestCircleTime(180, 165, 174);
 
-        Car bmv = new Car("BMV", "Z8", 2021, "Германия", "", 300, 3.0,
-                " ", "купе", "f804od695", 2, " ");
-        bmv.setTransmission("автоматическая");
-        bmv.changeTires();
+        Car bmv = new Car("BMV", "Z8",3.0);
         bmv.transportWright();
-        bmv.carWright();
-        System.out.println(bmv.getProductionYear());
-        bmv.setKey(distant);
-        distant.keyWright();
-        Car.Insurance bmvZ8 = new Car.Insurance(3, 20000, 856458954);
-        bmv.setInsurance(bmvZ8);
-        bmvZ8.checkDuration(2020);
-        bmvZ8.checkNumber();
+        bmv.maxSpeed(240, 190, 251);
 
-
-        Car kia = new Car("KIA", "Sportage 4 поколение", 2018, "Южная Корея", "красный", 200, 2.4,
-                "механическая", "кроссовер", "p008pl965", 6, " ");
-        kia.changeTires();
+        Car kia = new Car("KIA", "Sportage 4 поколение", 2.4);
         kia.transportWright();
-        kia.carWright();
-        System.out.println(kia.getProductionCountry());
-        kia.setKey(local);
-        local.keyWright();
-        Car.Insurance kiaSportage4 = new Car.Insurance(5, 25000, 954856565);
-        kia.setInsurance(kiaSportage4);
-        kiaSportage4.checkDuration(2019);
 
-        Car hyundai = new Car("Hyundai", "", 2016, "Южная Корея", "оранжевый", 240, 1.6,
-                "автоматическая", "микро", "l008re048", 1, " ");
-        hyundai.changeTires();
-        hyundai.transportWright();
-        hyundai.carWright();
-        System.out.println(hyundai.getCarcase());
-        hyundai.setKey(local);
-        local.keyWright();
-        Car.Insurance hyundaiDefault = new Car.Insurance(4, 14500, 54832512);
-        hyundai.setInsurance(hyundaiDefault);
-        hyundaiDefault.checkDuration(2018);
-        hyundaiDefault.checkNumber();
+        Truck zilBull = new Truck("ЗИЛ", "Бычок", 25);
+        zilBull.transportWright();
+        zilBull.bestCircleTime(195, 210, 204);
 
-        Bus uno = new Bus("MAN", "Lion's City", 2018, "Германия", "белый", 180);
+        Truck eurotent = new Truck("Евротент", "", 25);
+        eurotent.transportWright();
+        eurotent.pitStop(10);
+
+        Truck gazel = new Truck("Газель", "", 20);
+        gazel.transportWright();
+
+        Truck zil = new Truck("ЗИЛ", "", 20);
+        zil.transportWright();
+        zil.maxSpeed(167, 195, 187);
+
+        Bus uno = new Bus("MAN", "Lion's City", 25);
         uno.transportWright();
+        uno.startMotion();
+        uno.pitStop(9);
 
-        Bus duo = new Bus("VolgaBus", "5270GH", 2018, "Россия", "жёлтый", 190);
+        Bus duo = new Bus("VolgaBus", "5270GH", 30);
         duo.transportWright();
+        duo.bestCircleTime(251, 358, 370);
 
-        Bus tres = new Bus("ЛИАЗ", "6231", 2004, "Россия", "зелёный", 240);
+        Bus tres = new Bus("ЛИАЗ", "6231", 25);
         tres.transportWright();
+        tres.maxSpeed(120, 200, 196);
+
+        Bus quatro = new Bus("УАЗ", "Буханка", 35);
+        quatro.transportWright();
+        quatro.maxSpeed(150, 210, 240);
+
+        DriverB b = new DriverB("Иванов Иван Иванович", "есть", 8);
+        System.out.println(b);
+
+        DriverC c = new DriverC("Колосков Дмитрий Попович", "есть", 13);
+        System.out.println(c);
+
+        DriverD d = new DriverD("Малицкий Николай Степанович", "есть", 4);
+
+        audi.registration(b);
+        zilBull.registration(c);
+        tres.registration(d);
+
+
 
     }
 }

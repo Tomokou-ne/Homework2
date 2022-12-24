@@ -1,14 +1,13 @@
 package transport;
 
-public class Transport {
+import driver.Driver;
+
+public class Transport <T extends Driver & Competing> {
     private String brand;
     private String model;
-    private int productionYear;
-    private String productionCountry;
-    String color;
-    int maxSpeed;
+    double engineVolume;
 
-    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
+    public Transport(String brand, String model, double engineVolume) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "default";
         } else {
@@ -19,32 +18,15 @@ public class Transport {
         } else {
             this.model = model;
         }
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
+        if (engineVolume <= 0) {
+            this.engineVolume = 1.5;
         } else {
-            this.productionYear = productionYear;
+            this.engineVolume = engineVolume;
         }
-        if (productionCountry == null || productionCountry.isEmpty() || productionCountry.isBlank()) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (maxSpeed > 0) {
-            this.maxSpeed = maxSpeed;
-        } else {
-            this.maxSpeed = 150;
-        }
-
     }
 
     public void transportWright() {
-        System.out.println(brand + " " + model + ", " + productionYear + " года выпуска, страна сборщик " + productionCountry + ", цвет кузова "
-                + color + ", максимальная скорость " + maxSpeed);
+        System.out.println(brand + " " + model + ", объем двигателя " + engineVolume );
     }
     public String getBrand() {
         return brand;
@@ -53,36 +35,27 @@ public class Transport {
     public String getModel() {
         return model;
     }
-
-    public int getProductionYear() {
-        return productionYear;
+    public double getEngineVolume() {
+        return engineVolume;
     }
 
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
+    public void setEngineVolume(double engineVolume) {
+        if (engineVolume <= 0) {
+            this.engineVolume = 1.5;
         } else {
-            this.color = color;
+            this.engineVolume = engineVolume;
         }
     }
+    public void startMotion() {
+        System.out.println("Начать движение!");
 
-    public int getMaxSpeed() {
-        return maxSpeed;
+    }
+    public void stopMotion() {
+        System.out.println("Остановить движение");
+    }
+    public void registration(T driver) {
+        System.out.println("Водитель " + driver.getInitials() + " управляет автомобилем " + brand + " и будет участвовать в заезде");
     }
 
-    public void setMaxSpeed(int maxSpeed) {
-        if (maxSpeed > 0) {
-            this.maxSpeed = maxSpeed;
-        } else {
-            this.maxSpeed = 150;
-        }
-    }
+
 }
