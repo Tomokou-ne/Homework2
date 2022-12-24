@@ -5,7 +5,7 @@ import driver.Driver;
 public class Transport <T extends Driver & Competing> {
     private String brand;
     private String model;
-    double engineVolume;
+    private double engineVolume;
 
     public Transport(String brand, String model, double engineVolume) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
