@@ -8,8 +8,7 @@ public class Main {
         Car.Key local = new Car.Key("отсутствует", "отсутствует");
 
         Car lada = new Car("Lada", "Grande", 2015, "Россия", "жёлтый", 120, 1.7,
-                " ", "седан", "h584ko965", 0, " ");
-        lada.setTransmission("механическая");
+                "механическая", "седан", "h584ko965", 0, " ");
         lada.changeTires();
         System.out.println(lada);
 
@@ -35,8 +34,7 @@ public class Main {
         audiA8.checkDuration(2015);
 
         Car bmv = new Car("BMV", "Z8", 2021, "Германия", "", 300, 3.0,
-                " ", "купе", "f804od695", 2, " ");
-        bmv.setTransmission("автоматическая");
+                "автоматическая", "купе", "f804od695", 2, " ");
         bmv.changeTires();
         System.out.println(bmv);
 
@@ -60,6 +58,7 @@ public class Main {
         Car.Insurance kiaSportage4 = new Car.Insurance(5, 25000, 954856565);
         kia.setInsurance(kiaSportage4);
         kiaSportage4.checkDuration(2019);
+
 
         Car hyundai = new Car("Hyundai", "", 2016, "Южная Корея", "оранжевый", 240, 1.6,
                 "автоматическая", "микро", "l008re048", 1, " ");

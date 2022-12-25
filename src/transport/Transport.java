@@ -1,12 +1,12 @@
 package transport;
 
 public class Transport {
-    protected String brand;
-    protected String model;
-    protected final int productionYear;
-    protected final String productionCountry;
-    protected String color;
-    protected static int maxSpeed;
+    private String brand;
+    private String model;
+    private final int productionYear;
+    private final String productionCountry;
+    private String color;
+    private int maxSpeed;
 
     public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
@@ -49,40 +49,21 @@ public class Transport {
     public String getBrand() {
         return brand;
     }
-
     public String getModel() {
         return model;
     }
-
     public int getProductionYear() {
         return productionYear;
     }
-
     public String getProductionCountry() {
         return productionCountry;
     }
-
     public String getColor() {
         return color;
     }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
     public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(int maxSpeed) {
-        if (maxSpeed > 0) {
-            this.maxSpeed = maxSpeed;
-        } else {
-            this.maxSpeed = 150;
-        }
-    }
+
 }

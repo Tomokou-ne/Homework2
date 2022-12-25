@@ -7,8 +7,8 @@ public class Bus extends Transport{
     }
     @Override
     public String toString() {
-        return brand + model + productionYear + " года выпуска, страна сборщик " + productionCountry +
-                ", цвет кузова " + color + ", максимальная скорость " + maxSpeed + " км/час";
+        return getBrand() + " " + getModel() + " " + getProductionYear() + " года выпуска, страна сборщик " + getProductionCountry() +
+                ", цвет кузова " + getColor() + ", максимальная скорость " + getMaxSpeed() + " км/час";
     }
 
 

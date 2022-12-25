@@ -4,12 +4,12 @@ import java.util.Calendar;
 
 
 public class Car extends Transport{
-    double engineVolume;
-    String transmission;
+    private double engineVolume;
+    private String transmission;
     private String carcase;
-    String registrationNumber;
+    private String registrationNumber;
     private int numberOfSeats;
-    String typeOfTires;
+    private String typeOfTires;
     private Key key;
     private Insurance insurance;
 
@@ -83,30 +83,12 @@ public class Car extends Transport{
             return duration;
         }
 
-        public void setDuration(int duration) {
-            if (duration >= 0) {
-                this.duration = duration;
-            } else { this.duration = 0; }
-        }
-
         public int getCost() {
             return cost;
         }
 
-        public void setCost(int cost) {
-            if (cost <= 0) {
-                this.cost = 1_500;
-            } else { this.cost = cost; }
-        }
-
         public int getNumber() {
             return number;
-        }
-
-        public void setNumber(int number) {
-            if (number < 0) {
-                this.number = 000_000_001;
-            } else { this.number = number; }
         }
 
         public void checkDuration(int durationDate) {
@@ -168,8 +150,8 @@ public class Car extends Transport{
 
     @Override
     public String toString() {
-        return brand + model + productionYear + " года выпуска, страна сборщик " + productionCountry +
-                ", цвет кузова " + color + ", максимальная скорость " + maxSpeed + " км/час, объем двигателя " + engineVolume +
+        return getBrand() + " " + getModel() + " " + getProductionYear() + " года выпуска, страна сборщик " + getProductionCountry() +
+                ", цвет кузова " + getColor() + ", максимальная скорость " + getMaxSpeed() + " км/час, объем двигателя " + engineVolume +
                 ", коробка передач " + transmission + ", тип кузова " + carcase + ", регистрационный номер " + registrationNumber
                 + ", количество мест " + numberOfSeats + ", резина " + typeOfTires;
     }
@@ -204,35 +186,12 @@ public class Car extends Transport{
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
-        if (engineVolume <= 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-    }
-
     public String getTransmission() {
         return transmission;
-    }
-
-    public void setTransmission (String transmission) {
-        if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
-            this.transmission = "default";
-        } else {
-            this.transmission = transmission;
-        }
     }
 
     public String getRegistrationNumber() {
         return registrationNumber;
     }
 
-    public void setRegistrationNumber(String registrationNumber) {
-        if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank()) {
-            this.registrationNumber = "default";
-        } else {
-            this.registrationNumber = registrationNumber;
-        }
-    }
 }
