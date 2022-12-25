@@ -2,7 +2,7 @@ package transport;
 
 import driver.Driver;
 
-public class Transport <T extends Driver & Competing> {
+public class Transport <T extends Driver<Transport> & Competing> {
     private String brand;
     private String model;
     private double engineVolume;

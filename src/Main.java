@@ -56,13 +56,14 @@ public class Main {
         quatro.transportWright();
         quatro.maxSpeed(150, 210, 240);
 
-        DriverB b = new DriverB("Иванов Иван Иванович", "есть", 8);
+
+        DriverB b = new DriverB("Иванов Иван Иванович", 5, lada);
         System.out.println(b);
 
-        DriverC c = new DriverC("Колосков Дмитрий Попович", "есть", 13);
+        DriverC c = new DriverC("Колосков Дмитрий Попович", 8, gazel);
         System.out.println(c);
 
-        DriverD d = new DriverD("Малицкий Николай Степанович", "есть", 4);
+        DriverD d = new DriverD("Малицкий Николай Степанович", 4, duo);
 
         audi.registration(b);
         zilBull.registration(c);

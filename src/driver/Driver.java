@@ -1,11 +1,14 @@
 package driver;
 
-public class Driver {
-    private String initials;
-    private String driversLicence;
-    private int experience;
+import transport.Transport;
 
-    public Driver(String initials, String driversLicence, int experience) {
+public class Driver<T extends Transport> {
+    private final String initials;
+    private final String driversLicence;
+    private final int experience;
+    private final T car;
+
+    public Driver(String initials, String driversLicence, int experience, T car) {
         if (initials == null || initials.isBlank() || initials.isEmpty()) {
             this.initials = "водитель";
         } else {
@@ -19,43 +22,21 @@ public class Driver {
         } else {
             this.experience = experience;
         }
+        this.car = car;
     }
 
     public String getInitials() {
         return initials;
     }
 
-    public void setInitials(String initials) {
-        if (initials == null || initials.isBlank() || initials.isEmpty()) {
-            this.initials = "водитель";
-        } else {
-            this.initials = initials;
-        }
-    }
-
     public String getDriversLicence() {
         return driversLicence;
-    }
-
-    public void setDriversLicence(String driversLicence) {
-        if (driversLicence == null || driversLicence.isBlank() || driversLicence.isEmpty()) {
-            this.driversLicence = "отсутствуют";
-        } else {
-            this.driversLicence = driversLicence;
-        }
     }
 
     public int getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
-        if (experience <= 0) {
-            this.experience = Math.abs(experience);
-        } else {
-            this.experience = experience;
-        }
-    }
     public void startMoving1() {
         System.out.println("Водитель " + initials + " начал движение");
     }

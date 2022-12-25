@@ -1,6 +1,4 @@
 package transport;
-import java.time.LocalDate;
-import java.util.Calendar;
 
 
 public class Car extends Transport implements Competing{
