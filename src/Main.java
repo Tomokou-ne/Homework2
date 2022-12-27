@@ -46,10 +46,11 @@ public class Main {
         //duo.transportWright();
         //duo.bestCircleTime(251, 358, 370);
         System.out.println(duo.getCapacity());
-        Bus tres = new Bus("ЛИАЗ", "6231", 25, Bus.SeatCapacity.ESP_BIG);
+        Bus tres = new Bus("ЛИАЗ", "6231", 25, null);
         //tres.transportWright();
         //tres.maxSpeed(120, 200, 196);
         System.out.println(tres);
+        tres.determineCarType();
 
         Bus quatro = new Bus("УАЗ", "Буханка", 35, Bus.SeatCapacity.AVERAGE);
         //quatro.transportWright();

@@ -52,6 +52,13 @@ public enum SeatCapacity {
         this.capacity = capacity;
     }
 
+public void determineCarType() {
+        if (capacity == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println(capacity);
+        }
+}
     @Override
 public String toString() {
         return getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume() + ". " + capacity;

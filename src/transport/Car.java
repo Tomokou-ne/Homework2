@@ -37,10 +37,17 @@ public class Car extends Transport implements Competing {
     public Carcase getCarcase() {
         return carcase;
     }
+
     public void setCarcase(Carcase carcase) {
         this.carcase = carcase;
     }
-
+    public void determineCarType() {
+        if (carcase == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println(carcase);
+        }
+    }
     @Override
     public String toString(){
         return getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume() + ". " + carcase;

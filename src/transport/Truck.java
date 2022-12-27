@@ -55,7 +55,13 @@ public class Truck extends Transport implements Competing {
     public void setCapacity(LiftingCapacity capacity) {
         this.capacity = capacity;
     }
-
+    public void determineCarType() {
+        if (capacity == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println(capacity);
+        }
+    }
     @Override
     public String toString() {
         return getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume() + ". " + capacity;
