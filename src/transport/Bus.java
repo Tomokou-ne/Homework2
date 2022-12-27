@@ -1,15 +1,61 @@
 package transport;
 
-import driver.DriverD;
-
-import java.util.Arrays;
-
 public class Bus extends Transport implements Competing {
-
-    public Bus(String brand, String model, double engineVolume) {
+SeatCapacity capacity;
+    public Bus(String brand, String model, double engineVolume, SeatCapacity capacity) {
         super(brand, model, engineVolume);
+        this.capacity = capacity;
+    }
+public enum SeatCapacity {
+        ESP_SMALL(null, 10),
+        SMALL(null, 25),
+        AVERAGE(40, 50),
+        BIG(60, 80),
+        ESP_BIG(100, 120);
+
+    private Integer bottomLine;
+    private Integer upperLine;
+    SeatCapacity(Integer bottomLine, Integer upperLine){
+        this.bottomLine = bottomLine;
+        this.upperLine = upperLine;
     }
 
+    public Integer getBottomLine() {
+        return bottomLine;
+    }
+
+    public void setBottomLine(Integer bottomLine) {
+        this.bottomLine = bottomLine;
+    }
+
+    public Integer getUpperLine() {
+        return upperLine;
+    }
+
+    public void setUpperLine(Integer upperLine) {
+        this.upperLine = upperLine;
+    }
+    @Override
+    public String toString(){
+        if (bottomLine == null) {
+            return "Вместимость: до " + upperLine + " мест";
+        } else {
+            return "Вместимость: " + bottomLine + " - " + upperLine + " мест";
+        }
+    }
+}
+
+    public SeatCapacity getCapacity() {
+        return capacity;
+    }
+    public void setCapacity(SeatCapacity capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+public String toString() {
+        return getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume() + ". " + capacity;
+}
     @Override
     public void pitStop(int circle) {
         if (circle % 3 == 0) {

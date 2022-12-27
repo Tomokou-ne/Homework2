@@ -1,12 +1,50 @@
 package transport;
+public class Car extends Transport implements Competing {
 
+    Carcase carcase;
 
-public class Car extends Transport implements Competing{
-
-    public Car(String brand, String model, double engineVolume) {
+    public Car(String brand, String model, double engineVolume, Carcase carcase) {
         super(brand, model, engineVolume);
+        this.carcase = carcase;
+    }
+    public enum Carcase
+    {
+        SEDAN("Седан"),
+        HATCHBACK("Хетчбек"),
+        COUPE("Купе"),
+        UNIVERSAL("Универсал"),
+        SUV("Внедорожник"),
+        CROSSOVER("Кроссовер"),
+        PICKUP("Пикап"),
+        VAN("Фургон"),
+        MINIVAN("Минивен");
+        private String carcaseType;
+        Carcase(String carcaseType) {
+            this.carcaseType = carcaseType;
+        }
+        public String getCarcaseType() {
+        return carcaseType;
+        }
+        public void setCarcaseType(String carcaseType) {
+            this.carcaseType = carcaseType;
+        }
+        @Override
+        public String toString(){
+            return "Тип кузова: " + getCarcaseType();
+        }
     }
 
+    public Carcase getCarcase() {
+        return carcase;
+    }
+    public void setCarcase(Carcase carcase) {
+        this.carcase = carcase;
+    }
+
+    @Override
+    public String toString(){
+        return getBrand() + " " + getModel() + ", объем двигателя " + getEngineVolume() + ". " + carcase;
+    }
     @Override
     public void pitStop(int circle) {
         if (circle % 8 == 0) {
@@ -36,3 +74,4 @@ public class Car extends Transport implements Competing{
         }
     }
 }
+
