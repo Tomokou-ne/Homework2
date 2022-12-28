@@ -1,7 +1,6 @@
 package transport;
-
 import driver.Driver;
-
+import java.io.FileNotFoundException;
 public class Transport <T extends Driver<Transport> & Competing> {
     private String brand;
     private String model;
@@ -22,6 +21,12 @@ public class Transport <T extends Driver<Transport> & Competing> {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
+        }
+    }
+
+    public static void diagnose(Driver driver) throws FileNotFoundException {
+        if (!driver.getDriversLicence()) {
+            throw new FileNotFoundException();
         }
     }
 

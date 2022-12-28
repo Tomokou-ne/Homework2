@@ -29,7 +29,7 @@ public class Driver<T extends Transport> {
         return initials;
     }
 
-    public String getDriversLicence() {
+    public boolean getDriversLicence() {
         return driversLicence;
     }
 
