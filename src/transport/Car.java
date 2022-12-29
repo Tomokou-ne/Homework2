@@ -7,6 +7,12 @@ public class Car extends Transport implements Competing {
         super(brand, model, engineVolume);
         this.carcase = carcase;
     }
+
+    @Override
+    public boolean diagnose() {
+        return Math.random() > 0.45;
+    }
+
     public enum Carcase
     {
         SEDAN("Седан"),

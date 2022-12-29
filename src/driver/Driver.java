@@ -3,10 +3,10 @@ package driver;
 import transport.Transport;
 
 public class Driver<T extends Transport> {
-    private final String initials;
-    private final String driversLicence;
-    private final int experience;
-    private final T car;
+    private String initials;
+    private String driversLicence;
+    private int experience;
+    private T car;
 
     public Driver(String initials, String driversLicence, int experience, T car) {
         if (initials == null || initials.isBlank() || initials.isEmpty()) {
@@ -29,12 +29,27 @@ public class Driver<T extends Transport> {
         return initials;
     }
 
-    public boolean getDriversLicence() {
+    public String getDriversLicence() {
         return driversLicence;
+    }
+
+    public void setDriversLicence(String driversLicence) {
+        if (driversLicence == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        }
+        this.driversLicence = driversLicence;
     }
 
     public int getExperience() {
         return experience;
+    }
+
+    public T getCar() {
+        return car;
+    }
+
+    public void setCar(T car) {
+        this.car = car;
     }
 
     public void startMoving1() {

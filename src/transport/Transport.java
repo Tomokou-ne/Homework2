@@ -1,7 +1,7 @@
 package transport;
 import driver.Driver;
 import java.io.FileNotFoundException;
-public class Transport <T extends Driver<Transport> & Competing> {
+public abstract class Transport <T extends Driver<Transport> & Competing> {
     private String brand;
     private String model;
     private double engineVolume;
@@ -24,11 +24,7 @@ public class Transport <T extends Driver<Transport> & Competing> {
         }
     }
 
-    public static void diagnose(Driver driver) throws FileNotFoundException {
-        if (!driver.getDriversLicence()) {
-            throw new FileNotFoundException();
-        }
-    }
+    public abstract boolean diagnose();
 
     public void transportWright() {
         System.out.println(brand + " " + model + ", объем двигателя " + engineVolume );

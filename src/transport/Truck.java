@@ -8,6 +8,11 @@ public class Truck extends Transport implements Competing {
         this.capacity = capacity;
     }
 
+    @Override
+    public boolean diagnose() {
+        return Math.random() > 0.55;
+    }
+
     public enum LiftingCapacity {
         N1(null, 3.5F),
         N2(3.5F, 12F),

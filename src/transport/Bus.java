@@ -6,7 +6,13 @@ SeatCapacity capacity;
         super(brand, model, engineVolume);
         this.capacity = capacity;
     }
-public enum SeatCapacity {
+
+    @Override
+    public boolean diagnose() {
+        return false;
+    }
+
+    public enum SeatCapacity {
         ESP_SMALL(null, 10),
         SMALL(null, 25),
         AVERAGE(40, 50),
