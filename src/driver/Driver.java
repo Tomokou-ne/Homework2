@@ -1,5 +1,6 @@
 package driver;
 
+import mechanic.Mechanic;
 import transport.Transport;
 
 public class Driver<T extends Transport> {

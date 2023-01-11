@@ -1,6 +1,13 @@
 package mechanic;
 
-public class Mechanic {
+import driver.Driver;
+import transport.Competing;
+import transport.Transport;
+
+import java.util.Random;
+import java.util.SortedMap;
+
+public class Mechanic <T extends Transport>{
     private final String initials;
     private String company;
     private String workLicence;
@@ -30,7 +37,14 @@ public class Mechanic {
     public void setWorkLicence(String workLicence) {
         this.workLicence = workLicence;
     }
-    public void maintenance(){}
+
+    @Override
+    public String toString(){
+        return "Механик: " + initials + ", работает в компании " + company + ", может работать с транспортом: " + workLicence;
+    }
+    public boolean maintenance(T transport){
+        return transport.diagnose();
+    }
 
     public void fix(){}
 }

@@ -1,8 +1,11 @@
+import driver.Driver;
 import driver.DriverB;
 import driver.DriverC;
 import driver.DriverD;
+import mechanic.Mechanic;
 import transport.Bus;
 import transport.Car;
+import transport.Transport;
 import transport.Truck;
 
 import java.util.*;
@@ -31,26 +34,32 @@ public class Main {
         DriverC c = new DriverC("Колосков Дмитрий Попович", 8, gazel);
         DriverD d = new DriverD("Малицкий Николай Степанович", 4, duo);
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add(lada.getBrand());
-        list.add(audi.getBrand());
-        list.add(bmv.getBrand());
-        list.add(kia.getBrand());
-        list.add(zilBull.getBrand());
-        list.add(eurotent.getBrand());
-        list.add(gazel.getBrand());
-        list.add(zil.getBrand());
-        list.add(uno.getBrand());
-        list.add(duo.getBrand());
-        list.add(tres.getBrand());
-        list.add(quatro.getBrand());
-        System.out.println(list);
+        Mechanic m1 = new Mechanic("Василий Петров", "сервисный центр асна", "все типы");
+        Mechanic m2 = new Mechanic("Геннадий Алёшкин", "ООО ЧинИм", "все типы");
+        Mechanic m3 = new Mechanic("Анатолий Васнецов", "ИП Гараж-Центр", "все типы");
 
-        ArrayList<String> driver = new ArrayList<>();
-        driver.add(b.getInitials());
-        driver.add(c.getInitials());
-        driver.add(d.getInitials());
-        System.out.println(driver);
+        List<Transport> transports = List.of(
+                lada, audi, bmv, kia,
+                zilBull, eurotent, gazel,zil,
+                uno, duo, tres, quatro
+        );
+        for (Transport transport : transports) {
+            System.out.println(transport);
+        }
+
+        List<Driver> drivers = List.of(
+                b, c, d
+        ); for (Driver value : drivers) {
+            System.out.println(value);
+        }
+
+        List<Mechanic> mechanics = List.of(
+                m1, m2, m3
+        ); for (Mechanic value : mechanics) {
+            System.out.println(value);
+        }
+
+        m2.maintenance(zil);
 
     }
 }
